@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="util"
+                type="com.smsrn.movieshowcase.util.Utils"/>
+
+        <variable
+                name="item"
+                type="com.smsrn.movieshowcase.models.response.PhotoDetails"/>
+    </data>
+
+    <androidx.appcompat.widget.AppCompatImageView
+            app:loadImageUrl="@{util.getPhotoUrlByDetails(item)}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"/>
+</layout>

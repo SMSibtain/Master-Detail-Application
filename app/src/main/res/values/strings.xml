@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Master - Detail Application</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_year">Movie Year</string>
+    <string name="movie_cast">Movie Cast</string>
+    <string name="movie_genres">Movie Genres</string>
+    <string name="movie_rating">Movie Rating</string>
+    <string name="movie_photos_collection">Movie Photos Collection</string>
 </resources>
