@@ -1,7 +1,8 @@
-package com.smsrn.movieshowcase
+package com.smsrn.movieshowcase.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.smsrn.movieshowcase.R
 
 class MainActivity : AppCompatActivity() {
 
