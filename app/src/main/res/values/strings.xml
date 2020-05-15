@@ -6,4 +6,5 @@
     <string name="movie_genres">Movie Genres</string>
     <string name="movie_rating">Movie Rating</string>
     <string name="movie_photos_collection">Movie Photos Collection</string>
+    <string name="loadingDialogMessage">Processing&#8230;</string>
 </resources>

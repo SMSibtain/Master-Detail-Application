@@ -14,7 +14,11 @@ class GeneralRepository(
     private val generalLocalDataSource: GeneralLocalDataSource,
     private var generalRemoteDataSource: GeneralRemoteDataSource
 ) : GeneralDataSource {
-    override fun requestMoviesImagesCollection(movieTitle: String, callback: LoadDataCallback<PhotoDetailsResponse>) {
-
+    override fun requestMoviesImagesCollection(
+        movieTitle: String,
+        page: Int,
+        callback: LoadDataCallback<PhotoDetailsResponse>
+    ) {
+        generalRemoteDataSource.requestMoviesImagesCollection(movieTitle, page, callback)
     }
 }

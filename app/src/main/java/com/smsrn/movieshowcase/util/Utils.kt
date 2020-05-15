@@ -1,13 +1,11 @@
 package com.smsrn.movieshowcase.util
 
 import android.util.Log
-import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import com.smsrn.movieshowcase.MasterDetailApp
 import com.smsrn.movieshowcase.models.response.PhotoDetails
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import org.apache.commons.lang3.ObjectUtils
 import org.apache.commons.lang3.StringUtils
 import java.io.IOException
 
@@ -30,7 +28,7 @@ object Utils {
             photoDetails.id,
             photoDetails.secret
         ) { farm, server, id, secret ->
-            imageUrl = "http://farm{$farm}.static.flickr.com/{$server}/{$id}_{$secret}.jpg"
+            imageUrl = "http://farm$farm.static.flickr.com/$server/$id" + "_$secret.jpg"
         }
         return imageUrl
     }

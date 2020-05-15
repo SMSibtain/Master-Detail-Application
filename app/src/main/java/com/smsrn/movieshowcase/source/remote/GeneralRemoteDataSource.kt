@@ -11,7 +11,12 @@ import com.smsrn.movieshowcase.util.Constants.FLICKR_API_KEY
  * smsibtainrn@gmail.com
  */
 class GeneralRemoteDataSource : GeneralDataSource {
-    override fun requestMoviesImagesCollection(movieTitle: String, callback: LoadDataCallback<PhotoDetailsResponse>) {
-        /*Backend.flicker.getMovieImageCollectionFlickr(movieTitle, FLICKR_API_KEY).enqueue()*/
+    override fun requestMoviesImagesCollection(
+        movieTitle: String,
+        page: Int,
+        callback: LoadDataCallback<PhotoDetailsResponse>
+    ) {
+        Backend.flicker.getMovieImageCollectionFlickr(FLICKR_API_KEY, movieTitle, page)
+            .enqueue(GenericNetworkCallback(callback))
     }
 }

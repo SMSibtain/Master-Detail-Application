@@ -3,9 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable
-                name="util"
-                type="com.smsrn.movieshowcase.util.Utils"/>
+        <import type="com.smsrn.movieshowcase.util.Utils"/>
 
         <variable
                 name="item"
@@ -13,7 +11,9 @@
     </data>
 
     <androidx.appcompat.widget.AppCompatImageView
-            app:loadImageUrl="@{util.getPhotoUrlByDetails(item)}"
+            android:layout_margin="2.5dp"
+            app:loadImageUrl="@{Utils.INSTANCE.getPhotoUrlByDetails(item)}"
             android:layout_width="match_parent"
+            android:scaleType="fitXY"
             android:layout_height="@dimen/_150sdp"/>
 </layout>

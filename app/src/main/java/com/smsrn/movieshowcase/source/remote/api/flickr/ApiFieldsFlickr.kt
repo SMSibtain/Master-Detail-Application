@@ -6,8 +6,9 @@ package com.smsrn.movieshowcase.source.remote.api.flickr
  * smsibtainrn@gmail.com
  */
 object ApiFieldsFlickr {
-    const val API_KEY = "API_KEY"
-    const val MOVIE_TITLE = "MOVIE_TITLE"
+    const val API_KEY = "api_key"
+    const val TEXT = "text"
+    const val PAGE = "page"
     const val FARM = "FARM"
     const val ID = "ID"
     const val SERVER = "SERVER"

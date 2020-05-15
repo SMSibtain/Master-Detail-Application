@@ -11,7 +11,7 @@ data class PhotoDetails(
     var server: String?,
     var farm: Int,
     var title: String?,
-    var ispublic: Boolean,
-    var isfriend: Boolean,
-    var isfamily: Boolean
+    var ispublic: Int,
+    var isfriend: Int,
+    var isfamily: Int
 )

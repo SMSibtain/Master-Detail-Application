@@ -8,4 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="progressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:color">@color/colorAccent</item>
+    </style>
+
+    <!--Alert Dialog Style-->
+    <style name="alertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!--buttons color-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--title and message color-->
+        <item name="android:textColorPrimary">@color/textColor</item>
+        <!--dialog background-->
+        <item name="android:windowBackground">@drawable/alert_dialog_style</item>
+    </style>
+
 </resources>

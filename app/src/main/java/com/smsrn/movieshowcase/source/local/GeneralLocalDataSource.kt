@@ -9,7 +9,7 @@ import com.smsrn.movieshowcase.source.LoadDataCallback
  * smsibtainrn@gmail.com
  */
 class GeneralLocalDataSource : GeneralDataSource {
-    override fun requestMoviesImagesCollection(movieTitle: String, callback: LoadDataCallback<PhotoDetailsResponse>) {
+    override fun requestMoviesImagesCollection(movieTitle: String, page: Int, callback: LoadDataCallback<PhotoDetailsResponse>) {
 
     }
 }

@@ -9,6 +9,6 @@ import com.smsrn.movieshowcase.models.response.PhotoDetailsResponse
  */
 interface GeneralDataSource {
 
-    fun requestMoviesImagesCollection(movieTitle: String, callback: LoadDataCallback<PhotoDetailsResponse>)
+    fun requestMoviesImagesCollection(movieTitle: String, page: Int, callback: LoadDataCallback<PhotoDetailsResponse>)
 
 }

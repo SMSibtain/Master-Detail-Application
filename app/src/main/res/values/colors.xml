@@ -6,4 +6,5 @@
     <color name="appLabel">#586168</color>
     <color name="grey_light">#bcbdbc</color>
     <color name="white">#ffffffff</color>
+    <color name="textColor">#000000</color>
 </resources>
