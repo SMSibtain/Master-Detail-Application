@@ -26,8 +26,10 @@ object BindingAdapters {
     @JvmStatic
     fun setItems(recyclerView: RecyclerView, list: List<Any>? = null) {
         with(recyclerView.adapter as LastAdapter<Any>) {
-            if (list != null)
+            if (list != null) {
                 items = ArrayList(list)
+                this.notifyDataSetChanged()
+            }
         }
     }
 

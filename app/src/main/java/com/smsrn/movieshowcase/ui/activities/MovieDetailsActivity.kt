@@ -53,7 +53,6 @@ class MovieDetailsActivity : BaseActivity() {
         }
 
         setAdapter()
-        showProgressDialog()
         binding.viewModel?.requestMovieImages()
     }
 
@@ -77,12 +76,12 @@ class MovieDetailsActivity : BaseActivity() {
                         binding.viewModel?.isAllImagesFetched
                     ) { pageCount, totalPageCount, isFetchingPhotos, isAllImagesFetched ->
                         if (isAllImagesFetched) {
-                            AppToast.showToast("All images are fetched.")
+                            AppToast.showToast(R.string.all_images_are_fetched)
                         } else if (!isFetchingPhotos) {
                             if (pageCount <= totalPageCount) {
                                 binding.viewModel?.requestMovieImages()
                             } else if (pageCount > totalPageCount) {
-                                AppToast.showToast("No more images.")
+                                AppToast.showToast(R.string.no_more_images)
                             }
                         }
                     }

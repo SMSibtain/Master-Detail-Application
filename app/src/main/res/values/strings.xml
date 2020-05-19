@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Master - Detail Application</string>
+    <string name="app_name">Master Detail</string>
     <string name="movie_title">Movie Title</string>
     <string name="movie_year">Movie Year</string>
     <string name="movie_cast">Movie Cast</string>
@@ -7,4 +7,11 @@
     <string name="movie_rating">Movie Rating</string>
     <string name="movie_photos_collection">Movie Photos Collection</string>
     <string name="loadingDialogMessage">Processing&#8230;</string>
+    <string name="all_images_are_fetched">All images are fetched.</string>
+    <string name="no_more_images">No more images.</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="as_previous">As Previous</string>
+    <string name="search">Search</string>
+    <string name="reset">Reset</string>
 </resources>

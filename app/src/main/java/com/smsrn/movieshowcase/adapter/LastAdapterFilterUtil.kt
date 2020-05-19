@@ -1,5 +1,7 @@
 package com.smsrn.movieshowcase.adapter
 
+import com.smsrn.movieshowcase.models.MovieDetails
+
 /**
  * Created by Sibtain Raza on 4/6/2020.
  * smsibtainrn@gmail.com
@@ -7,12 +9,12 @@ package com.smsrn.movieshowcase.adapter
 object LastAdapterFilterUtil {
     fun <T> filterResult(item: T, charString: String): Boolean {
         when (item) {
-            /*is GeneralFilterItem -> {
-                if (item.firstValue.contains(charString, ignoreCase = true) ||
-                    item.secondValue.contains(charString, ignoreCase = true))
-                    return true
+            is MovieDetails -> {
+                item.title?.let {
+                    return it.contains(charString, ignoreCase = true)
+                }
                 return false
-            }*/
+            }
         }
         return true
     }

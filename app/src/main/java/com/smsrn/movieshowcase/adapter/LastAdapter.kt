@@ -20,6 +20,7 @@ class LastAdapter<T> internal constructor(
     private val itemClickListener: OnItemClickListener<T>? = null
 ) : RecyclerView.Adapter<LastAdapter<T>.MyViewHolder>(), Filterable {
 
+    private lateinit var charSequenceString: String
     var items: ArrayList<T> = ArrayList()
         set(value) {
             field = value
@@ -29,7 +30,7 @@ class LastAdapter<T> internal constructor(
             notifyDataSetChanged()
         }
 
-    var itemsFiltered: ArrayList<T> = ArrayList()
+    private var itemsFiltered: ArrayList<T> = ArrayList()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -80,22 +81,33 @@ class LastAdapter<T> internal constructor(
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(charSequence: CharSequence?): FilterResults {
-                val charString = charSequence.toString().toLowerCase()
-                if (charString.isEmpty()) {
-                    itemsFiltered.clear()
-                    itemsFiltered.addAll(items)
+                val filterResult = FilterResults()
+
+                if (charSequence.isNullOrEmpty()) {
+                    filterResult.values = items
                 } else {
                     val filterItems: ArrayList<T> = ArrayList()
-                    for (item in items) {
-                        if (filterResult(item, charString)) {
-                            filterItems.add(item)
+                    if (!::charSequenceString.isInitialized ||
+                        charSequence.toString() < charSequenceString
+                    ) {
+                        charSequenceString = charSequence.toString()
+                        items.forEach {
+                            if (filterResult(it, charSequenceString)) {
+                                filterItems.add(it)
+                            }
                         }
+                        filterResult.values = filterItems
+                    } else {
+                        charSequenceString = charSequence.toString()
+                        itemsFiltered.forEach {
+                            if (filterResult(it, charSequenceString)) {
+                                filterItems.add(it)
+                            }
+                        }
+                        filterResult.values = filterItems
                     }
-                    itemsFiltered.clear()
-                    itemsFiltered.addAll(filterItems)
                 }
-                val filterResult = FilterResults()
-                filterResult.values = itemsFiltered
+
                 return filterResult
             }
 

@@ -36,6 +36,9 @@ class MoviesDetailActivityViewModel : ViewModel() {
     var isFetchingPhotos: Boolean = false
     var isAllImagesFetched: Boolean = false
 
+    /**
+     * Request movie photos
+     */
     fun requestMovieImages() {
         isFetchingPhotos = true
         _movieDetails.value?.title?.let {
@@ -54,15 +57,13 @@ class MoviesDetailActivityViewModel : ViewModel() {
                         ) {
                             isAllImagesFetched = true
                         }
-                        pageCount += 1
+                        pageCount += DIGIT_ONE
                         isFetchingPhotos = false
-                        DialogUtils.hideProgressDialog()
                     }
 
                     override fun onDataNotAvailable(errorCode: Int, reasonMsg: String) {
                         DialogUtils.hideProgressDialog()
                         isFetchingPhotos = false
-                        AppToast.showDebugToast(reasonMsg)
                     }
                 })
         }

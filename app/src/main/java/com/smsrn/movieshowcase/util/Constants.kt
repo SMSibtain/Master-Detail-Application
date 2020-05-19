@@ -7,9 +7,10 @@ package com.smsrn.movieshowcase.util
  */
 object Constants {
 
-    const val DIGIT_ZERO : Int = 0
-    const val DIGIT_ONE : Int = 1
-    const val DIGIT_TWO : Int = 2
+    const val DIGIT_ZERO: Int = 0
+    const val DIGIT_ONE: Int = 1
+    const val DIGIT_TWO: Int = 2
+    const val DIGIT_THREE: Int = 3
 
     const val FLICKR_API_KEY = "441715ce30e3de7ff443ce0d86e946fb"
 
@@ -17,7 +18,7 @@ object Constants {
     const val CONNECTION_ERROR_MSG =
         "Problem in internet connectivity. Check your internet connection."
 
-    object AssetsNames{
+    object AssetsNames {
         const val MOVIES_JSON_FILE_NAME = "movies.json"
     }
 
@@ -34,5 +35,11 @@ object Constants {
         const val CHECK_SUB_CODE = 422
         const val UNAUTHORIZED = 401
         const val INTERNAL_SERVER_ERROR = 500
+    }
+
+    object Sortings {
+        const val ASCENDING = DIGIT_ONE
+        const val DESCENDING = DIGIT_TWO
+        const val RESET = DIGIT_THREE
     }
 }
