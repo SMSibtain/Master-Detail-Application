@@ -1,6 +1,5 @@
 package com.smsrn.movieshowcase.viewmodels
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
@@ -9,10 +8,8 @@ import com.smsrn.movieshowcase.models.MovieDetails
 import com.smsrn.movieshowcase.models.response.MovieDetailsResponse
 import com.smsrn.movieshowcase.util.Constants
 import com.smsrn.movieshowcase.util.Constants.DIGIT_THREE
-import com.smsrn.movieshowcase.util.Constants.Sortings.ASCENDING
-import com.smsrn.movieshowcase.util.Constants.Sortings.DESCENDING
-import com.smsrn.movieshowcase.util.Constants.Sortings.RESET
 import com.smsrn.movieshowcase.util.Utils
+import okhttp3.internal.Util
 import org.apache.commons.lang3.StringUtils
 
 /**
@@ -21,7 +18,9 @@ import org.apache.commons.lang3.StringUtils
  */
 class MainActivityViewModel : ViewModel() {
 
-    private var _items: ArrayList<MovieDetails>? = ArrayList()
+    private var _items: ArrayList<MovieDetails> = ArrayList()
+    val items: ArrayList<MovieDetails>
+        get() = _items
 
     private val _itemsFiltered = MutableLiveData<ArrayList<MovieDetails>>().apply { value = ArrayList() }
     val itemsFiltered: MutableLiveData<ArrayList<MovieDetails>>
@@ -36,11 +35,11 @@ class MainActivityViewModel : ViewModel() {
     fun getMoviesList() {
         val moviesJsonString: String = Utils.getJsonDataFromAsset(Constants.AssetsNames.MOVIES_JSON_FILE_NAME)
         if (moviesJsonString.isNotEmpty()) {
-            val movieDetailsResponse: MovieDetailsResponse = Gson().fromJson(
+            val movieDetailsResponse: MovieDetailsResponse = Utils.getGson().fromJson(
                 moviesJsonString,
                 object : TypeToken<MovieDetailsResponse>() {}.type
             )
-            _items = movieDetailsResponse.movies
+            movieDetailsResponse.movies?.let { _items = it }
             setOrResetList()
         }
     }

@@ -2,7 +2,6 @@ package com.smsrn.movieshowcase.ui.activities
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.smsrn.movieshowcase.R
 import com.smsrn.movieshowcase.adapter.LastAdapter
 import com.smsrn.movieshowcase.databinding.ActivityMovieDetailsBinding
-import com.smsrn.movieshowcase.extensions.gotoActivity
 import com.smsrn.movieshowcase.extensions.obtainViewModel
 import com.smsrn.movieshowcase.models.MovieDetails
 import com.smsrn.movieshowcase.models.response.PhotoDetails

@@ -2,6 +2,7 @@ package com.smsrn.movieshowcase.util
 
 import android.util.Log
 import androidx.appcompat.widget.AppCompatImageView
+import com.google.gson.Gson
 import com.smsrn.movieshowcase.MasterDetailApp
 import com.smsrn.movieshowcase.models.response.PhotoDetails
 import com.squareup.picasso.Callback
@@ -69,4 +70,6 @@ object Utils {
                 })
         }
     }
+
+    fun getGson() = Gson()
 }

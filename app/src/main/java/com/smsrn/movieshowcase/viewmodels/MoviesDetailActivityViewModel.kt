@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.smsrn.movieshowcase.models.MovieDetails
 import com.smsrn.movieshowcase.models.response.PhotoDetails
 import com.smsrn.movieshowcase.models.response.PhotoDetailsResponse
+import com.smsrn.movieshowcase.source.GeneralDataSource
 import com.smsrn.movieshowcase.source.GeneralRepository
 import com.smsrn.movieshowcase.source.LoadDataCallback
 import com.smsrn.movieshowcase.util.AppToast
@@ -21,7 +22,7 @@ import com.smsrn.movieshowcase.util.Injection
  */
 class MoviesDetailActivityViewModel : ViewModel() {
 
-    private val generalRepository: GeneralRepository = Injection.provideGeneralRepository()
+    private val generalRepository: GeneralDataSource = Injection.provideGeneralRepository()
 
     private val _movieDetails = MutableLiveData<MovieDetails>()
     val movieDetails: MutableLiveData<MovieDetails>
